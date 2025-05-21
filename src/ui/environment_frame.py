@@ -1,6 +1,3 @@
-"""
-Python Version Comparison Tool - Environment Frame UI
-"""
 import customtkinter as ctk
 import tkinter as tk
 from tkinter import filedialog, scrolledtext, messagebox
@@ -124,7 +121,6 @@ class PythonEnvironmentFrame(ctk.CTkFrame):
             self.run_button.configure(state="disabled")
     
     def browse_python_executable(self):
-        """Open file dialog to select a Python executable"""
         file_types = [("Python Executable", "python*.exe"), ("All Files", "*.*")] if platform.system() == "Windows" else [("All Files", "*")]
         
         python_path = filedialog.askopenfilename(
@@ -137,12 +133,10 @@ class PythonEnvironmentFrame(ctk.CTkFrame):
             self.path_entry.delete(0, tk.END)
             self.path_entry.insert(0, python_path)
             
-            # Get Python version info
             self.get_python_version()
     
     def get_python_version(self):
         """Get and display the Python version"""
-        # Determine the Python path
         if self.use_system_var.get():
             self.python_path = "python"
         elif not self.python_path:
@@ -151,14 +145,12 @@ class PythonEnvironmentFrame(ctk.CTkFrame):
                 return
             self.python_path = self.path_entry.get()
         
-        # Run Python with version flag
         version, return_code, error = detect_python_version(self.python_path)
         
         if version:
-            # Save version and display
             self.version_info = version
             self.version_label.configure(text=f"Python version: {version}")
-            # Enable buttons
+
             self.get_packages_button.configure(state="normal")
             if hasattr(self._app_master, 'script_path') and getattr(self._app_master, 'script_path', None):
                 self.run_button.configure(state="normal")

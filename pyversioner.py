@@ -1,7 +1,6 @@
 import customtkinter as ctk
 from src.ui.main_window import PyVersionerApp
 
-# Application version
 __version__ = "1.0.0"
 
 
