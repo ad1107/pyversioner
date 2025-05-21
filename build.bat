@@ -1,8 +1,8 @@
 @echo off
 setlocal
 
-set SCRIPT_NAME=main.py
-set BASE_NAME=main
+set SCRIPT_NAME=pyversioner.py
+set BASE_NAME=pyversioner
 set APP_NAME=pyversioner
 
 set /p ver="Enter version number (e.g., 1.0.0): "
