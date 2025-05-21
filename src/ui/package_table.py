@@ -1,4 +1,3 @@
-"""Package Table UI Component"""
 import customtkinter as ctk
 from typing import List, Dict
 
@@ -78,7 +77,5 @@ class PackageListWindow(ctk.CTkToplevel):
         self.package_table = CTkPackageTable(self, packages)
         self.package_table.grid(row=0, column=0, sticky="nsew", padx=10, pady=10)
         
-        # Make window stay on top
-        self.transient(self.master)
         self.grab_set()
         self.focus_force()

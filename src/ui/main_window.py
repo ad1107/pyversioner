@@ -1,7 +1,4 @@
-﻿"""
-Python Version Comparison Tool - Main Application Window
-"""
-import customtkinter as ctk
+﻿import customtkinter as ctk
 import tkinter as tk
 from tkinter import filedialog, messagebox, scrolledtext
 
@@ -163,6 +160,7 @@ FEATURES:
         doc_window.grid_rowconfigure(0, weight=1)
         doc_window.transient(self)  # Make window stay on top of parent
         doc_window.grab_set()  # Make window modal
+        doc_window.focus_force()  # Force focus on this window
 
 
         # Create a text widget for the documentation

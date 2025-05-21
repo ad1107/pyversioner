@@ -1,4 +1,3 @@
-"""Python Environment Utilities"""
 import subprocess
 import re
 import json

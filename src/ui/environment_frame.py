@@ -179,9 +179,7 @@ class PythonEnvironmentFrame(ctk.CTkFrame):
         packages, return_code, error = get_installed_packages(self.python_path)
         
         if packages:
-            # Display packages in a new window
             window = PackageListWindow(packages, f"{self.title} - Installed Packages")
-            window.focus()
         else:
             # Display error
             messagebox.showerror("Error", f"Failed to get package list: {error}")
